@@ -1,0 +1,25 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  loaddata-example
+       author:  iwona
+       changes:
+         - loadData:
+#             relativeToChangelogFile: true
+             file: db/changelog/dataset/people.csv
+             tableName: person
+             separator: ', '
+             encoding: UTF-8
+             columns:
+               - column:
+                   name:  id
+                   type:  numeric
+               - column:
+                    name:  firstname
+                    type:  varchar(50)
+               - column:
+                    name:  lastname
+                    type:  varchar(50)
+               - column:
+                   name:  state
+                   type:  char(2)
+
